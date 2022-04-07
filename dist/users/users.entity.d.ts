@@ -1,0 +1,35 @@
+import { PuestoEntity } from './../rh/puestos-departamentos/entity/puesto.entity';
+import { CommonEntity } from '@sanfrancisco/common/commonEntity.abstract';
+import { ImageEntity } from '@sanfrancisco/images/model/image.entity';
+import { SucursalEntity } from '@sanfrancisco/sucursales/sucursal.entity';
+import { PerfilTipoEmpleado, ProfileTypes } from './profiles.enum';
+export declare class UsersEntity extends CommonEntity {
+    passwordToken: string;
+    passwordTokenDate: Date;
+    email: string;
+    firstName: string;
+    lastName: string;
+    password: string;
+    profile: ProfileTypes;
+    tipoEmpleado: PerfilTipoEmpleado;
+    validEmail?: boolean;
+    accesoSistema?: boolean;
+    emailToken?: string;
+    rules?: string[];
+    picUrl?: string;
+    telefono: string;
+    sucursal: SucursalEntity;
+    sucursalesPermitidas: SucursalEntity[];
+    image: ImageEntity;
+    puesto: PuestoEntity;
+    device: any;
+    jwt: string;
+    nip?: string;
+    tipoSanguineo?: string;
+    maxDescuento?: number;
+    fechaNac: Date;
+    curp: string;
+    grabandoRules: boolean;
+    comisionVendedor?: number;
+    constructor(email: string, firstName: string, lastName: string, profile: ProfileTypes, password: string, rules: string[], active?: boolean, nip?: string, maxDescuento?: number);
+}

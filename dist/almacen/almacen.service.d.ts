@@ -1,0 +1,35 @@
+import { CreateSucursalesInsumosDTO } from './../sucursales/dto/createSucursalInsumo.dto';
+import { SucursalesService } from '../sucursales/services/sucursales.service';
+import { DeleteResult, UpdateResult } from 'typeorm';
+import { PaginationPrimeNgResult } from '@sanfrancisco/common/DTO/pagination-prime-Ng-result.dto';
+import { CreateMovimientoDTO } from './DTOs/create-movimiento.dto';
+import { UpdateMovimientoDTO } from './DTOs/update-movimiento.dto';
+import { LoginIdentityDTO } from '@sanfrancisco/auth/dto/loginIdentity.dto';
+import { CreateInformeDTO } from './DTOs/create-informe.dto';
+import { TiposMovimiento } from './tiposMovimiento.enum';
+import { PaginationOptions } from '@sanfrancisco/common/DTO/paginationPrimeNg.dto';
+import { SucursalesInsumosService } from '@sanfrancisco/sucursales/services/sucursalesInsumos.service';
+export declare class AlmacenService {
+    private readonly _sucursalservice;
+    private readonly _sucursalesInsumosService;
+    private readonly notFoundMessage;
+    constructor(_sucursalservice: SucursalesService, _sucursalesInsumosService: SucursalesInsumosService);
+    waitMovimiento(movimiento: TiposMovimiento, data: CreateSucursalesInsumosDTO, sucursalOrigen: number, sucursalDestino?: number): Promise<any>;
+    create(movimiento: CreateMovimientoDTO, detalle: any[], user: LoginIdentityDTO): Promise<CreateInformeDTO>;
+    getAlmacenesAltasBySucursal(idSucursal: number, options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    getInsumosByRequisicion(movimientoId: number): Promise<any>;
+    getAlmacenesAltasBajasBySucursal(idSucursal: number, options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    getAlmacenesTransferenciaBySucursal(idSucursal: number, options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    getById(id: number): Promise<CreateInformeDTO>;
+    update(id: number, movimiento: UpdateMovimientoDTO): Promise<UpdateResult>;
+    setStatus(id: number, status: string): Promise<UpdateResult>;
+    delete(id: number): Promise<DeleteResult>;
+    paginate(options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    paginateRequisicion(options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    paginateRequisicionbySucursal(options: PaginationOptions, sucursal: number, user: LoginIdentityDTO): Promise<PaginationPrimeNgResult>;
+    paginateTransferencia(options: PaginationOptions, user: LoginIdentityDTO): Promise<PaginationPrimeNgResult>;
+    paginateRecibidosMatriz(options: PaginationOptions, user: LoginIdentityDTO): Promise<PaginationPrimeNgResult>;
+    paginateTransitoParcial(options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    paginateTransito(options: PaginationOptions, user: LoginIdentityDTO): Promise<PaginationPrimeNgResult>;
+    filtroMovimientos(start: string, end: string): Promise<Uint8Array>;
+}

@@ -1,0 +1,16 @@
+# settings minimos, requeridos por las pruebas y docker
+
+# deben coincidir con los del archivo orm.config-test.json 
+# para que las pruebas ejecutadas con docker-compose funcionen
+
+MYSQL_DB=sanfrancisco
+MYSQL_PORT=3306
+MYSQL_HOST=localhost
+MYSQL_USER=sanfrancisco
+MYSQL_PASSWORD=mysqlpassanfranciscosword
+MYSQL_ROOT_PASSWORD=mysqlrootpassanfranciscosword
+
+#opcional, si se decide usar redis para los sockets
+REDIS_PASSWORD=938476b290345670gh9b3456780
+REDIS_PORT=6379
+REDIS_HOST=localhost

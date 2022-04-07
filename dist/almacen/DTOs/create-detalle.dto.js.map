@@ -1,0 +1,1 @@
+{"version":3,"file":"create-detalle.dto.js","sourceRoot":"","sources":["../../../src/almacen/DTOs/create-detalle.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,iEAA6D;AAC7D,8EAA0E;AAC1E,6CAA8C;AAE9C,MAAa,gBAAgB;CAO5B;AALC;IADC,qBAAW,EAAE;8BACK,oDAAwB;2DAAC;AAE5C;IADC,qBAAW,EAAE;8BACN,4BAAY;gDAAC;AAErB;IADC,qBAAW,EAAE;;kDACG;AANnB,4CAOC"}

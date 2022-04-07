@@ -1,0 +1,19 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "coverageDirectory": "./coverage-e2e",
+  "coverageThreshold": {
+    "global": {
+      "lines": 60,
+      "statements": 60
+    }
+  },
+  "moduleNameMapper": {
+    "@sanfrancisco/(.*)$": "<rootDir>../src/$1"
+  }
+}

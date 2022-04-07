@@ -1,0 +1,25 @@
+import { GrupoServicioEntity } from './grupo-servicio.entity';
+
+export const GruposServiciosToCreate: GrupoServicioEntity[] = [
+  { nombre: 'Coagulación' },
+  { nombre: 'ComboGrupo' },
+  { nombre: 'Electroforesis' },
+  { nombre: 'Especiales' },
+  { nombre: 'especiales' },
+  { nombre: 'Hematología' },
+  { nombre: 'hematología' },
+  { nombre: 'Hormonas' },
+  { nombre: 'Inmuno 2' },
+  { nombre: 'Inmunología' },
+  { nombre: 'Microanálisis' },
+  { nombre: 'Microbiología' },
+  { nombre: 'NUTRIOLOGIA' },
+  { nombre: 'Orientaciones' },
+  { nombre: 'Parasitología' },
+  { nombre: 'Quimica Clinica' },
+  { nombre: 'Química Clínica' },
+  { nombre: 'Rayos X' },
+  { nombre: 'Serología' },
+  { nombre: 'Ultrasonido' },
+  { nombre: 'Urianálisis' },
+];

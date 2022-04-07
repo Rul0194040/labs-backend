@@ -1,0 +1,8 @@
+export declare enum EstatusMovimiento {
+    TRANSITO = "TRANSITO",
+    TRANSITO_PARCIAL = "TRANSITO_PARCIAL",
+    SOLICITADO = "SOLICITADO",
+    APROBADO = "APROBADO",
+    CANCELADO = "CANCELADO",
+    FINALIZADO = "FINALIZADO"
+}

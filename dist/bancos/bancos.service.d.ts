@@ -1,0 +1,36 @@
+import { UpdateMovimientoDTO } from './../almacen/DTOs/update-movimiento.dto';
+import { MovimientoCuentaBanco } from './entities/movimientos-bancos.entity';
+import { CreateMovBancarioDTO } from './dto/create-mov-bancario.dto';
+import { PaginationPrimeNgResult } from '@sanfrancisco/common/DTO/pagination-prime-Ng-result.dto';
+import { PaginationOptions } from '@sanfrancisco/common/DTO/paginationPrimeNg.dto';
+import { DeleteResult, UpdateResult } from 'typeorm';
+import { CreateBancoDto } from './dto/create-banco.dto';
+import { CreateCuentaDto } from './dto/create-cuenta.dto';
+import { CreateTipoCuentaGastoDTO } from './dto/create-tipo-cuenta-gasto.dto';
+import { UpdateBancoDto } from './dto/update-banco.dto';
+import { UpdateCuentaDto } from './dto/update-cuenta.dto';
+import { UpdateTipoCuentaGastoDTO } from './dto/update-tipo-cuenta-gasto.dto';
+import { BancoEntity } from './entities/banco.entity';
+import { CuentaBancariaEntity } from './entities/cuenta-bancaria.entity';
+import { TipoCuentaGastoEntity } from './entities/tipos-cuenta-gasto.entity';
+export declare class BancosService {
+    create(banco: CreateBancoDto): Promise<BancoEntity>;
+    getById(id: number): Promise<BancoEntity>;
+    update(id: number, banco: UpdateBancoDto): Promise<UpdateResult>;
+    delete(id: number): Promise<DeleteResult>;
+    paginate(options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    createCuenta(cuenta: CreateCuentaDto): Promise<CuentaBancariaEntity>;
+    getCuentaById(id: number): Promise<CuentaBancariaEntity>;
+    updateCuenta(id: number, cuenta: UpdateCuentaDto): Promise<UpdateResult>;
+    deleteCuenta(id: number): Promise<DeleteResult>;
+    paginateCuenta(options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    crearTipoCuentaGasto(tipoCuentaGasto: CreateTipoCuentaGastoDTO): Promise<TipoCuentaGastoEntity>;
+    actualizarTipoCuentaGasto(id: number, tipocuentaGasto: UpdateTipoCuentaGastoDTO): Promise<UpdateResult>;
+    cuentaGastoPaginate(options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    getCuentaGastoById(id: number): Promise<TipoCuentaGastoEntity>;
+    createMov(movimiento: CreateMovBancarioDTO): Promise<MovimientoCuentaBanco>;
+    updateMov(id: number, mov: UpdateMovimientoDTO): Promise<UpdateResult>;
+    paginateMov(options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    getMovById(id: number): Promise<MovimientoCuentaBanco>;
+    deleteMov(id: number): Promise<DeleteResult>;
+}

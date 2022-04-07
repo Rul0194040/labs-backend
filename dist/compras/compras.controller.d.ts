@@ -1,0 +1,37 @@
+import { DetalleCompraDTO } from './DTO/detalle-compra.dto';
+import { GenerarOrdenDTO } from './DTO/generar-orden.dto';
+import { HttpStatus } from '@nestjs/common';
+import { PaginationPrimeNgResult } from '@sanfrancisco/common/DTO/pagination-prime-Ng-result.dto';
+import { PaginationOptions } from '@sanfrancisco/common/DTO/paginationPrimeNg.dto';
+import { UpdateResult, DeleteResult } from 'typeorm';
+import { ComprasService } from './compras.service';
+import { InformeCompraDTO } from './DTO/informe-compra.dto';
+import { InformeResultDTO } from './DTO/informe-result.dto';
+import { GetCompraDTO } from './DTO/get-compra.dto';
+import { AgregarInsumoDTO } from './DTO/agregarInsumoDetalle.dto';
+import { DetalleCompraEntity } from './detallesCompras.entity';
+import { Response } from 'express';
+import { HeimdalService } from '@sanfrancisco/common/heimdal/heimdal.service';
+import { AltaByCompraDTO } from './DTO/altaBycompra.dto';
+import { LoginIdentityDTO } from '@sanfrancisco/auth/dto/loginIdentity.dto';
+import { FileResultDTO } from '@sanfrancisco/common/DTO/fileResult.dto';
+export declare class ComprasController {
+    private readonly compraService;
+    private readonly heimalService;
+    constructor(compraService: ComprasService, heimalService: HeimdalService);
+    create(compra: InformeCompraDTO): Promise<InformeResultDTO>;
+    generarCompra(compra: GenerarOrdenDTO): Promise<HttpStatus>;
+    paginate(options: PaginationOptions): Promise<PaginationPrimeNgResult>;
+    getById(id: number): Promise<GetCompraDTO>;
+    createDetalle(compraId: number, detalle: AgregarInsumoDTO): Promise<DetalleCompraEntity[]>;
+    FinalizarOrdenCompra(compraId: number, data: AltaByCompraDTO, user: LoginIdentityDTO): Promise<InformeResultDTO>;
+    EnviarCompra(compraId: number): Promise<HttpStatus>;
+    updateDetalle(detalleId: number, detalle: DetalleCompraDTO): Promise<DetalleCompraEntity>;
+    updateClave(id: number, clave: boolean): Promise<UpdateResult>;
+    updateStatus(id: number, status: boolean): Promise<UpdateResult>;
+    delete(id: number): Promise<DeleteResult>;
+    deleteDetalle(id: number): Promise<DeleteResult>;
+    updateCotizacion(file: FileResultDTO, id: number, numCotizacion: number): Promise<UpdateResult>;
+    descargarCotizacion(id: number, res: Response): Promise<void>;
+    arqueo(res: Response, id: number): Promise<void>;
+}

@@ -1,0 +1,30 @@
+import { ProveedorEntity } from '@sanfrancisco/catalogos/proveedores/proveedores.entity';
+import { TipoUnidadEntity } from '@sanfrancisco/catalogos/tipos-unidades/tipos-unidades.entity';
+import { CommonEntity } from '@sanfrancisco/common/commonEntity.abstract';
+import { InsumoEntity } from '@sanfrancisco/insumos/insumo.entity';
+import { PresupuestoEntity } from './presupuesto.entity';
+export declare class PresupuestoDetalleEntity extends CommonEntity {
+    presupuesto: PresupuestoEntity;
+    presupuestoId: number;
+    insumo: InsumoEntity;
+    insumoId: number;
+    tipoUnidad: TipoUnidadEntity;
+    tipoUnidadId: number;
+    proveedor1: ProveedorEntity;
+    proveedor1Id: number;
+    proveedor2: ProveedorEntity;
+    proveedor2Id: number;
+    proveedor3: ProveedorEntity;
+    proveedor3Id: number;
+    proveedorSeleccionado: ProveedorEntity;
+    proveedorSeleccionadoId: number;
+    fechaPromesa: Date;
+    precio1: number;
+    precio2: number;
+    precio3: number;
+    descuento1: number;
+    descuento2: number;
+    descuento3: number;
+    precioSeleccionado: number;
+    cantidad: number;
+}

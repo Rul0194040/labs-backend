@@ -1,0 +1,11 @@
+import { createUserDTO } from './dto/createUser.dto';
+export declare const SuperUsersToCreate: createUserDTO[];
+export declare const AdminUsersToCreate: createUserDTO[];
+export declare const AlmacenGeneralToCreate: createUserDTO[];
+export declare const SucursalToCreate: createUserDTO[];
+export declare const TesoreroSucCentralesToCreate: createUserDTO[];
+export declare const TesoreroSucForaneasToCreate: createUserDTO[];
+export declare const ComprasToCreate: createUserDTO[];
+export declare const DirectivosToCreate: createUserDTO[];
+export declare const GerenteSucursalesToCreate: createUserDTO[];
+export declare const VentaGeneralToCreate: createUserDTO[];

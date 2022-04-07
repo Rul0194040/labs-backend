@@ -1,0 +1,12 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "generateOptions": {
+    "spec": false
+  },
+  "compilerOptions": {
+    "assets": ["**/*.docx", "**/*.ejs", "assets/**/*"],
+    "outDir": "dist/src",
+    "watchAssets": true
+  }
+}
